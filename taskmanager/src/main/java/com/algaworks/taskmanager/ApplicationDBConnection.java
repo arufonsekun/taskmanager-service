@@ -19,7 +19,7 @@ public class ApplicationDBConnection {
 		conf.configure();
 		
 		try {
-			sessionFactory = new Configuration().configure().buildSessionFactory();
+			sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 		} catch (HibernateException e) {
 			throw new ExceptionInInitializerError(e);
 		}

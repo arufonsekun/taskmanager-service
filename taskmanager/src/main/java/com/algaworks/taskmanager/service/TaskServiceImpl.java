@@ -2,7 +2,6 @@ package com.algaworks.taskmanager.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.algaworks.taskmanager.model.Task;
 import com.algaworks.taskmanager.taskmanagerDAO.TaskmanagerDAOImpl;
@@ -16,10 +15,18 @@ public class TaskServiceImpl implements TaskInterface {
 	@Autowired
 	private TaskmanagerDAOImpl taskDAO;
 	
-	@Override @Transactional
+	@Override
 	public void saveTaskObj(Task task) {
 		taskDAO.saveTaskObj(task);
 	}
+	
+	public Task getTask(String id) {
+		return taskDAO.getTaskById(id);
+	}
+	
+	/*public Task getTask(String title) {
+		return taskDAO.getTaskByTitle(title);
+	}*/
 	
 	
 	

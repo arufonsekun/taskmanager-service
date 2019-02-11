@@ -3,6 +3,7 @@ package com.algaworks.taskmanager.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -14,9 +15,15 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity(name = "tasks")
 public class Task {
 	@Id
-	@GeneratedValue(generator = "system-increment")
-	@GenericGenerator(name = "system-increment", strategy = "increment")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 	@Column
 	private String type;
@@ -53,12 +60,6 @@ public class Task {
 	}
 	public void setDeadLine(String deadLine) {
 		this.dead_line = deadLine;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}
 	
 	
