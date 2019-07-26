@@ -2,7 +2,7 @@
 The main purpose of this project is to create a web service using spring java framework based on REST architecture (kk). Besides that taskmanager-service intents to provide the required resources from TaskManager Angular app.
 
 ### Run the server
-taskmanager-service uses PosgreSQL SGBD so check this [link](https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04) to now how to install and run Postgres on Ubuntu.
+taskmanager-service uses PosgreSQL SGBD so check this [link](https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04) to know how to install and run Postgres on Ubuntu.
 
 After that run `sudo su -l postgres` to login into the local postgres user, then run `psql` to login into the database and finally `CREATE DATABASE taskmanager` to create the database.
 Finally run `./mvnw spring-boot:run` inside taskmanager-service to start the server.
